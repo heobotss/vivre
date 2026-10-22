@@ -270,6 +270,9 @@ section{position:relative}
 .proof-list{display:flex;flex-wrap:wrap;gap:10px}
 .proof-list li{font-size:15px;color:var(--ink-2);border:1px solid var(--line-2);border-radius:999px;padding:8px 16px;line-height:1.4}
 .proof-list li.key{color:var(--ink);border-color:var(--ink-3)}
+.reps{border-top:1px solid var(--line-2);margin-bottom:24px}
+.reps li{display:grid;grid-template-columns:7.5em minmax(0,1fr);gap:16px;padding:16px 0;border-bottom:1px solid var(--line-2);font-size:17px;color:var(--ink)}
+.reps li span{color:var(--ink-3);font-size:14px;padding-top:2px}
 
 /* ───────── 7. 시설 ───────── */
 .space-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:24px;margin-bottom:56px}
@@ -310,6 +313,27 @@ section{position:relative}
 .pnotes li{font-size:15px;color:var(--ink-2);display:flex;align-items:center;gap:10px}
 .pnotes li::before{content:"";width:14px;height:1px;background:var(--ink-3)}
 .pnotes li b{color:var(--ink);font-weight:500}
+.price-open{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;justify-items:start;margin-bottom:24px}
+.price-open .pcard{width:100%}
+.pcard{all:unset;box-sizing:border-box;cursor:pointer;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:24px;align-items:center;padding:28px 32px;border:1px solid var(--line-2);border-radius:20px;background:linear-gradient(120deg,#17171A,#0F0F11);transition:border-color .3s,transform .4s var(--ease)}
+.pcard:hover,.pcard:focus-visible{border-color:var(--ink-2);transform:translateY(-2px)}
+.pcard:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
+.pc-k{font-size:clamp(22px,2.4vw,32px);font-weight:300;letter-spacing:.06em;font-style:italic}
+.pc-t{font-size:15px;color:var(--ink-3)}
+.pc-b{display:inline-flex;gap:10px;align-items:center;min-height:48px;padding:0 22px;border-radius:999px;background:var(--ink);color:var(--bg);font-size:15px;font-weight:500;white-space:nowrap}
+.pcard:hover .pc-b .ar{transform:translateX(4px)}.pc-b .ar{transition:transform .35s var(--ease)}
+.ask{margin-top:0}
+.sheet{width:min(920px,calc(100vw - 32px));max-height:88vh;padding:0;border:1px solid var(--line-2);border-radius:22px;background:var(--bg-2);color:var(--ink);overflow:auto;overscroll-behavior:contain}
+.sheet::backdrop{background:rgba(0,0,0,.72);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.sheet[open]{animation:sheetin .45s var(--ease)}
+@keyframes sheetin{from{opacity:0;transform:translateY(24px)}}
+.sheet-top{position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;align-items:center;padding:20px 28px;background:rgba(18,18,20,.96);border-bottom:1px solid var(--line-2)}
+.sheet-top p{font-size:18px;letter-spacing:.24em;font-weight:500}.sheet-top b{font-weight:300;font-style:italic;letter-spacing:.08em}
+.sheet-x{all:unset;cursor:pointer;font-size:14px;color:var(--ink-2);padding:10px 14px;border:1px solid var(--line-2);border-radius:999px}
+.sheet-x:hover,.sheet-x:focus-visible{color:var(--ink);border-color:var(--ink-2)}
+.sheet .plist{border-top:0;padding:0 28px}
+.sheet .pnotes{padding:0 28px;margin-top:20px}
+.sheet-cta{display:flex;flex-wrap:wrap;gap:12px;padding:28px}
 .price-cta{margin-top:48px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;padding-top:36px;border-top:1px solid var(--line)}
 .price-cta p{font-size:clamp(20px,2vw,26px);font-weight:300;letter-spacing:-.02em}
 
@@ -411,7 +435,9 @@ section{position:relative}
   .proof-list li{font-size:14px}
   .space-grid{gap:8px}
   .space-grid .ph figcaption{padding:14px 12px 10px}
-  .run-big{font-size:21vw}
+  .run-big{font-size:13.2vw;white-space:normal;line-height:.98;letter-spacing:-.04em;padding:0 var(--gutter);transform:none!important}
+  .run-big .rb1{display:block}
+  .run-big .rb2{display:none}
   .perk-box{grid-template-columns:minmax(0,1fr);gap:12px;padding:20px}
   .perk-box .tag{justify-self:start}
   .perk-box .btn{width:100%}
@@ -420,6 +446,12 @@ section{position:relative}
   .prow .t:empty{display:none}
   .ask{width:100%;justify-content:center;padding:0 14px;font-size:14.5px}
   .price-cta .btn-row,.price-cta .btn{width:100%}
+  .price-open{grid-template-columns:minmax(0,1fr)}
+  .pcard{grid-template-columns:minmax(0,1fr);gap:10px;padding:24px 22px}
+  .pc-b{justify-self:start}
+  .sheet{width:100vw;max-width:100vw;max-height:92vh;margin:auto 0 0;border-radius:22px 22px 0 0;border-bottom:0}
+  .sheet-top{padding:16px 18px}.sheet .plist,.sheet .pnotes{padding:0 18px}.sheet-cta{padding:22px 18px 28px}.sheet-cta .btn{width:100%}
+  .reps li{grid-template-columns:minmax(0,1fr);gap:2px;font-size:16px}
   .visit-table,.visit-table tbody,.visit-table tr,.visit-table th,.visit-table td{display:block;width:100%}
   .visit-table tr{border-bottom:1px solid var(--line-2);padding:16px 0}
   .visit-table th,.visit-table td{border-bottom:0;padding:0}
@@ -575,6 +607,10 @@ section{position:relative}
     <div class="proof">
       <h3 class="rv">트레이너를 가르치는<br><strong>협회가 있는 센터.</strong></h3>
       <div class="rv rv-d1">
+        <ul class="reps">
+          <li><span>허재윤 대표</span>대한트레이닝교육협회장</li>
+          <li><span>김연주 대표</span>NPCA 비키니 선수 아시아 프로</li>
+        </ul>
         <ul class="proof-list">
           <li class="key">국민체육진흥공단 안전안심 체육시설</li>
           <li class="key">문화체육관광부 생활스포츠지도사 실습기관</li>
@@ -582,7 +618,6 @@ section{position:relative}
           <li>대한트레이닝교육협회 운영 센터</li>
           <li>대한교정운동전문가협회 인증 센터</li>
           <li>운동의과학협회 인증 센터</li>
-          <li>허재윤 대표 — 전문스포츠지도사(보디빌딩)</li>
           <li>문화비 소득공제 적용 매장</li>
         </ul>
       </div>
@@ -613,7 +648,7 @@ section{position:relative}
 
 <!-- 8. 함께 달린다 -->
 <section id="run" class="run pad">
-  <p class="run-big" aria-hidden="true">YOUR BODY <span class="fill">EXPERT</span> TEAM · YOUR BODY <span class="fill">EXPERT</span> TEAM</p>
+  <p class="run-big" aria-hidden="true"><span class="rb1">YOUR BODY <span class="fill">EXPERT</span> TEAM</span><span class="rb2"> · YOUR BODY <span class="fill">EXPERT</span> TEAM</span></p>
   <div class="wrap run-body">
     <div>
       <p class="eyebrow rv">러닝 클래스</p>
@@ -634,55 +669,66 @@ section{position:relative}
         <p class="eyebrow rv">가격</p>
         <h2 class="display rv rv-d1">가격,<br><strong>숨기지 않습니다.</strong></h2>
       </div>
-      <p class="lead rv rv-d2">상담 때도 이 표 그대로 봅니다. 첫날 체험수업은 무료입니다.</p>
+      <p class="lead rv rv-d2">상담 때 보는 가격표를 그대로 공개합니다. 첫날 체험수업은 무료입니다.</p>
+    </div>
+    <div class="price-open rv">
+      <button type="button" class="pcard" data-open-price aria-haspopup="dialog">
+        <span class="pc-k">PRICE LIST</span>
+        <span class="pc-t">1:1 PT · 2:1 PT · 헬스 회원권 · 30분 PT</span>
+        <span class="pc-b">가격표 보기 <span class="ar">→</span></span>
+      </button>
+      <a class="ask" href="tel:0507-1354-8955"><span class="dot"></span>지금 회원권 할인이 있는지 전화로 물어보기 <span class="ar">→</span></a>
     </div>
     <div class="perk-box rv">
       <span class="tag">공기업 직원</span>
       <p>사원증 인증 시 PT·회원권 상시 할인<small>대상 기관과 금액은 상담 때 안내드립니다 · 한국관광공사 임직원 체력증진 프로젝트 참여 센터</small></p>
       <a class="btn btn-ghost" href="tel:0507-1354-8955">전화로 물어보기</a>
     </div>
-    <div class="plist">
-      <div class="pgroup rv">
-        <h3>1:1 PT<small>1회 50분 · 회당 가격, 부가세 별도</small></h3>
-        <div>
-          <div class="prow"><span class="c num">10회</span><span class="u num">80,000원<small>회당</small></span><span class="t num">총 880,000원 (부가세 포함)</span></div>
-          <div class="prow"><span class="c num">20회</span><span class="u num">70,000원<small>회당</small></span><span class="t num">총 1,540,000원 (부가세 포함)</span></div>
-          <div class="prow"><span class="c num">30회</span><span class="u num">60,000원<small>회당</small></span><span class="t num">총 1,980,000원 (부가세 포함)</span></div>
+    <dialog class="sheet" id="price-sheet" aria-labelledby="sheet-h">
+      <div class="sheet-top"><p id="sheet-h">VIVRE <b>PRICE LIST</b></p><button type="button" class="sheet-x" data-close-price aria-label="가격표 닫기">닫기 ✕</button></div>
+      <div class="plist">
+        <div class="pgroup">
+          <h3>1:1 PT<small>1회 50분 · 회당 가격, 부가세 별도</small></h3>
+          <div>
+            <div class="prow"><span class="c num">10회</span><span class="u num">80,000원<small>회당</small></span><span class="t num">총 880,000원 (부가세 포함)</span></div>
+            <div class="prow"><span class="c num">20회</span><span class="u num">70,000원<small>회당</small></span><span class="t num">총 1,540,000원 (부가세 포함)</span></div>
+            <div class="prow"><span class="c num">30회</span><span class="u num">60,000원<small>회당</small></span><span class="t num">총 1,980,000원 (부가세 포함)</span></div>
+          </div>
+        </div>
+        <div class="pgroup">
+          <h3>2:1 PT<small>둘이 함께 · 두 사람 합산 회당 가격, 부가세 별도</small></h3>
+          <div>
+            <div class="prow"><span class="c num">10회</span><span class="u num">100,000원<small>회당</small></span><span class="t num">총 1,100,000원 (부가세 포함)</span></div>
+            <div class="prow"><span class="c num">20회</span><span class="u num">90,000원<small>회당</small></span><span class="t num">총 1,980,000원 (부가세 포함)</span></div>
+            <div class="prow"><span class="c num">30회</span><span class="u num">80,000원<small>회당</small></span><span class="t num">총 2,640,000원 (부가세 포함)</span></div>
+          </div>
+        </div>
+        <div class="pgroup">
+          <h3>헬스 회원권<small>혼자 운동 · 운영시간 안에 자유 이용</small></h3>
+          <div>
+            <div class="prow"><span class="c num">1개월</span><span class="u num">110,000원</span><span class="t num">부가세 포함</span></div>
+            <div class="prow"><span class="c num">3개월</span><span class="u num">297,000원<small>월 90,000원</small></span><span class="t num">부가세 포함</span></div>
+            <div class="prow"><span class="c num">6개월</span><span class="u num">528,000원<small>월 80,000원</small></span><span class="t num">부가세 포함</span></div>
+          </div>
+        </div>
+        <div class="pgroup">
+          <h3>30분 PT<small>출근 전·점심에 30분<br>오전 6시~오후 4시 · 회원권 포함 · 부가세 포함</small></h3>
+          <div>
+            <div class="prow"><span class="c num">8회</span><span class="u num">440,000원<small>회원권 1개월+10일</small></span><span class="t"></span></div>
+            <div class="prow"><span class="c num">16회</span><span class="u num">792,000원<small>회원권 2개월+20일</small></span><span class="t"></span></div>
+            <div class="prow"><span class="c num">24회</span><span class="u num">1,056,000원<small>회원권 3개월+30일</small></span><span class="t"></span></div>
+          </div>
         </div>
       </div>
-      <div class="pgroup rv">
-        <h3>2:1 PT<small>둘이 함께 · 두 사람 합산 회당 가격, 부가세 별도</small></h3>
-        <div>
-          <div class="prow"><span class="c num">10회</span><span class="u num">100,000원<small>회당</small></span><span class="t num">총 1,100,000원 (부가세 포함)</span></div>
-          <div class="prow"><span class="c num">20회</span><span class="u num">90,000원<small>회당</small></span><span class="t num">총 1,980,000원 (부가세 포함)</span></div>
-          <div class="prow"><span class="c num">30회</span><span class="u num">80,000원<small>회당</small></span><span class="t num">총 2,640,000원 (부가세 포함)</span></div>
-        </div>
-      </div>
-      <div class="pgroup rv">
-        <h3>헬스 회원권<small>혼자 운동 · 운영시간 안에 자유 이용</small></h3>
-        <div>
-          <div class="prow"><span class="c num">1개월</span><span class="u num">110,000원</span><span class="t num">부가세 포함</span></div>
-          <div class="prow"><span class="c num">3개월</span><span class="u num">297,000원<small>월 90,000원</small></span><span class="t num">부가세 포함</span></div>
-          <div class="prow"><span class="c num">6개월</span><span class="u num">528,000원<small>월 80,000원</small></span><span class="t num">부가세 포함</span></div>
-          <a class="ask" href="tel:0507-1354-8955"><span class="dot"></span>지금 회원권 할인이 있는지 전화로 물어보기 <span class="ar">→</span></a>
-        </div>
-      </div>
-      <div class="pgroup rv">
-        <h3>30분 PT<small>출근 전·점심에 30분<br>오전 6시~오후 4시 · 회원권 포함 · 부가세 포함</small></h3>
-        <div>
-          <div class="prow"><span class="c num">8회</span><span class="u num">440,000원<small>회원권 1개월+10일</small></span><span class="t"></span></div>
-          <div class="prow"><span class="c num">16회</span><span class="u num">792,000원<small>회원권 2개월+20일</small></span><span class="t"></span></div>
-          <div class="prow"><span class="c num">24회</span><span class="u num">1,056,000원<small>회원권 3개월+30일</small></span><span class="t"></span></div>
-        </div>
-      </div>
-    </div>
-    <ul class="pnotes">
-      <li><b>첫날 체험수업은 무료</b> — 인바디·자세 평가·맞춤 수업 50분</li>
-      <li>1:1·2:1 PT 회당 가격은 부가세 별도, 총액은 부가세 포함</li>
-      <li>문화비 소득공제 적용</li>
-    </ul>
+      <ul class="pnotes">
+        <li><b>첫날 체험수업은 무료</b> — 인바디·자세 평가·맞춤 수업 50분</li>
+        <li>1:1·2:1 PT 회당 가격은 부가세 별도, 총액은 부가세 포함</li>
+        <li>문화비 소득공제 적용</li>
+      </ul>
+      <div class="sheet-cta"><a class="btn btn-fill" href="https://m.place.naver.com/place/1193233179/booking">무료 체험 예약하기 <span class="ar">→</span></a><a class="btn btn-ghost" href="tel:0507-1354-8955">할인 전화 문의</a></div>
+    </dialog>
     <div class="price-cta rv">
-      <p>가격을 보셨다면, 첫날은 무료로 와 보세요.</p>
+      <p>첫날은 무료로 와 보세요.</p>
       <div class="btn-row">
         <a class="btn btn-fill" href="https://m.place.naver.com/place/1193233179/booking">무료 체험 예약하기 <span class="ar">→</span></a>
         <a class="btn btn-ghost num" href="tel:0507-1354-8955">0507-1354-8955</a>
@@ -812,6 +858,12 @@ section{position:relative}
     var pio=new IntersectionObserver(function(es){es.forEach(function(en){en.target.classList.toggle('color',en.isIntersecting)})},{rootMargin:'-35% 0px -35% 0px'});
     document.querySelectorAll('.tr-card .ph,.space-grid .ph,.first .ph,.visit-side .ph').forEach(function(p){pio.observe(p)});
   }
+
+  /* 가격표 시트 */
+  var sheet=document.getElementById('price-sheet');
+  document.querySelectorAll('[data-open-price]').forEach(function(b){b.addEventListener('click',function(){if(sheet.showModal)sheet.showModal();else sheet.setAttribute('open','')})});
+  document.querySelectorAll('[data-close-price]').forEach(function(b){b.addEventListener('click',function(){if(sheet.close)sheet.close();else sheet.removeAttribute('open')})});
+  sheet.addEventListener('click',function(e){if(e.target===sheet&&sheet.close)sheet.close()});
 
   /* 흐르는 띠는 화면 밖에선 멈춘다 */
   var mq=document.querySelector('.marquee');
