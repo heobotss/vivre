@@ -855,8 +855,10 @@ section{position:relative}
   }else cells.forEach(function(c){c.classList.add('done')});
 
   /* 폰(마우스 없음): 화면 가운데 온 사진에 색을 돌려준다 */
-  if(matchMedia('(hover: none)').matches&&'IntersectionObserver' in window){
-    var pio=new IntersectionObserver(function(es){es.forEach(function(en){en.target.classList.toggle('color',en.isIntersecting)})},{rootMargin:'-35% 0px -35% 0px'});
+  /* 마우스로 가리키는 PC 가 아니면(폰·태블릿, 폭 1023px 이하 포함) 화면에 들어온 사진을 컬러로 바꾸고 그대로 둔다 */
+  var touchLike=!matchMedia('(hover: hover) and (pointer: fine)').matches||innerWidth<1024;
+  if(touchLike&&'IntersectionObserver' in window){
+    var pio=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('color');pio.unobserve(en.target)}})},{rootMargin:'-20% 0px -20% 0px',threshold:.15});
     document.querySelectorAll('.tr-card .ph,.space-grid .ph,.first .ph,.visit-side .ph').forEach(function(p){pio.observe(p)});
   }
 
