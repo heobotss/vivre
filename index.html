@@ -380,6 +380,25 @@ section{position:relative}
 .foot p a{text-decoration:underline;text-underline-offset:4px;color:var(--ink-2)}
 .foot .copy{font-size:13px}
 
+/* 자세히 보기 · 맨 아래 안내 링크 · 하위 페이지 머리 (11-10 페이지 나누기) */
+.more-link{margin-top:28px;font-size:16px}
+.foot-nav{display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:flex-end;margin-bottom:14px;font-size:14px}
+.foot-nav a{color:var(--ink-2)}.foot-nav a:hover{color:var(--ink)}
+.page-head{padding:clamp(130px,14vw,190px) 0 clamp(48px,6vw,80px);border-bottom:1px solid var(--line)}
+.crumb{font-size:13px;letter-spacing:.08em;color:var(--ink-3);margin-bottom:22px}
+.crumb a{text-decoration:underline;text-underline-offset:4px}
+.page-head h1{font-size:clamp(36px,5.6vw,80px);line-height:1.1;letter-spacing:-.035em;font-weight:300;max-width:14em;margin-bottom:22px;text-wrap:balance}
+.page-head .lead{max-width:36em}
+.sheet-inline .plist{border-top:1px solid var(--line-2)}
+.sheet-inline .pnotes{margin-bottom:8px}
+.pages{padding:clamp(56px,7vw,96px) 0;border-top:1px solid var(--line)}
+.pages h2{font-size:clamp(22px,2.2vw,30px);font-weight:300;letter-spacing:-.02em;margin-bottom:24px}
+.pages-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.pages-grid a{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:68px;padding:16px 22px;border:1px solid var(--line-2);border-radius:16px;background:var(--bg-2);font-size:16px;transition:border-color .3s,background .3s}
+.pages-grid a:hover{border-color:var(--ink-2);background:var(--bg-3)}
+@media (max-width:1023px){.pages-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:767px){.pages-grid{grid-template-columns:minmax(0,1fr)}.foot-nav{justify-content:flex-start}}
+
 .mbar{display:none}
 
 /* ───────── 태블릿 ───────── */
@@ -484,11 +503,11 @@ section{position:relative}
 <header class="top">
   <a class="mark" href="#top" aria-label="VIVRE 비브레PT 혁신점">VIVRE <small>비브레PT 혁신점</small></a>
   <nav aria-label="바로 가기">
-    <a href="#first">첫 상담</a>
-    <a href="#trainers">트레이너</a>
-    <a href="#space">시설</a>
-    <a href="#price">가격</a>
-    <a href="#visit">오시는 길</a>
+    <a href="/first/">처음 오시는 분</a>
+    <a href="/trainers/">트레이너</a>
+    <a href="/price/">가격</a>
+    <a href="/faq/">자주 묻는 질문</a>
+    <a href="/visit/">오시는 길</a>
     <a class="cta" href="https://m.place.naver.com/place/1193233179/booking">무료 체험 예약</a>
   </nav>
 </header>
@@ -582,6 +601,7 @@ section{position:relative}
         <p class="lead">등록하면 매 수업을 기록하고, 4주 차에 인바디를 다시 잽니다. 식단도 함께 봅니다.</p>
         <div class="meta"><span class="chip">주차 무료</span><span class="chip">건물 6층</span><span class="chip">임산부·어르신·아이 수업</span></div>
         <div class="btn-row"><a class="btn btn-fill" href="https://m.place.naver.com/place/1193233179/booking">무료 체험 예약하기 <span class="ar">→</span></a></div>
+        <p class="more-link rv"><a class="link" href="/first/">처음 오시는 분 안내 자세히 보기 →</a></p>
       </div>
     </div>
   </div>
@@ -623,6 +643,7 @@ section{position:relative}
         </ul>
       </div>
     </div>
+    <p class="more-link rv"><a class="link" href="/trainers/">트레이너 6명 소개 자세히 보기 →</a></p>
   </div>
 </section>
 
@@ -644,6 +665,7 @@ section{position:relative}
       <figure class="ph c rv rv-d2"><img src="photos/06-stretch.jpg?v=1022" srcset="photos/06-stretch-800.jpg?v=1022 800w, photos/06-stretch.jpg?v=1022 1496w" sizes="(max-width:1023px) 50vw, 33vw" alt="스트레칭·기능성 존" width="1496" height="1122" loading="lazy"><figcaption>스트레칭·기능성 존</figcaption></figure>
       <figure class="ph c rv rv-d3"><img src="photos/07-locker.jpg" srcset="photos/07-locker-800.jpg 800w, photos/07-locker.jpg 1600w" sizes="(max-width:1023px) 50vw, 33vw" alt="개인 락커와 개별 샤워 부스" width="1600" height="1600" loading="lazy"><figcaption>개인 락커 · 개별 샤워 부스</figcaption></figure>
     </div>
+    <p class="more-link rv"><a class="link" href="/visit/">시설·오시는 길 자세히 보기 →</a></p>
   </div>
 </section>
 
@@ -658,6 +680,7 @@ section{position:relative}
     <div class="rv rv-d2">
       <p class="lead">회원과 함께 달리는 러닝 클래스 RUN WITH VIVRE. 첫 모임에는 처음 달려 보는 분까지 20명 넘게 함께 달렸습니다.</p>
       <p style="margin-top:20px"><a class="link" href="https://map.naver.com/p/entry/place/1193233179">다음 일정은 네이버 플레이스 소식에서 →</a></p>
+      <p class="more-link rv"><a class="link" href="/run/">러닝 클래스 자세히 보기 →</a></p>
     </div>
   </div>
 </section>
@@ -735,6 +758,7 @@ section{position:relative}
         <a class="btn btn-ghost num" href="tel:0507-1354-8955">0507-1354-8955</a>
       </div>
     </div>
+    <p class="more-link rv"><a class="link" href="/price/">가격표 전체 자세히 보기 →</a></p>
   </div>
 </section>
 
@@ -756,6 +780,7 @@ section{position:relative}
       <details><summary>공기업 직원 할인이 있나요?</summary><p>네. 공기업 직원 인증 시 PT와 회원권에 상시 할인이 있습니다. 대상 기관과 금액은 상담 때 안내드립니다.</p></details>
       <details><summary>임산부·어르신·아이도 되나요?</summary><p>네. 임산부(산전·산후), 부모님·어르신, 아이 모두 수업합니다. 상황을 말씀해 주시면 맞는 트레이너와 순서를 정해 드립니다.</p></details>
       <details><summary>PT 말고 함께하는 프로그램도 있나요?</summary><p>회원과 함께 달리는 러닝 클래스 RUN WITH VIVRE가 있습니다. 첫 모임에는 처음 달려 보는 분까지 20명 넘게 함께 달렸습니다. 다음 일정은 네이버 플레이스 소식에 올립니다.</p></details>
+      <p class="more-link rv"><a class="link" href="/faq/">자주 묻는 질문 자세히 보기 →</a></p>
     </div>
   </div>
 </section>
@@ -783,6 +808,7 @@ section{position:relative}
         <a class="btn btn-ghost" href="https://map.naver.com/p/entry/place/1193233179">길찾기 · 네이버 지도</a>
       </div>
       <p class="note">예약은 네이버로, 궁금한 건 전화로.</p>
+      <p class="more-link rv"><a class="link" href="/visit/">오시는 길·주차 자세히 보기 →</a></p>
     </div>
   </div>
 </section>
@@ -817,7 +843,10 @@ section{position:relative}
       <p class="mean"><span lang="fr">vivre</span> — 프랑스어로 「살아가다」. 오래, 잘 살아가는 몸을 만듭니다.</p>
       <p>비브레PT 혁신점 · 강원 원주시 건강로 17-2 6층 601~604호<br>공동 대표 허재윤·김연주 · 전화 <a class="num" href="tel:0507-1354-8955">0507-1354-8955</a><br>평일 06:00~23:00 · 토 09:00~18:00 · 일·공휴일 휴무</p>
     </div>
-    <p class="copy">© VIVRE</p>
+    <div>
+      <nav class="foot-nav" aria-label="안내 페이지"><a href="/">홈</a><a href="/first/">처음 오시는 분</a><a href="/trainers/">트레이너</a><a href="/price/">가격</a><a href="/faq/">자주 묻는 질문</a><a href="/visit/">오시는 길</a><a href="/run/">러닝 클래스</a></nav>
+      <p class="copy">© VIVRE</p>
+    </div>
   </div>
 </footer>
 
@@ -864,9 +893,11 @@ section{position:relative}
 
   /* 가격표 시트 */
   var sheet=document.getElementById('price-sheet');
+  if(sheet){
   document.querySelectorAll('[data-open-price]').forEach(function(b){b.addEventListener('click',function(){if(sheet.showModal)sheet.showModal();else sheet.setAttribute('open','')})});
   document.querySelectorAll('[data-close-price]').forEach(function(b){b.addEventListener('click',function(){if(sheet.close)sheet.close();else sheet.removeAttribute('open')})});
   sheet.addEventListener('click',function(e){if(e.target===sheet&&sheet.close)sheet.close()});
+  }
 
   /* 흐르는 띠는 화면 밖에선 멈춘다 */
   var mq=document.querySelector('.marquee');
@@ -883,12 +914,12 @@ section{position:relative}
     root.style.setProperty('--read',max>0?(y/max).toFixed(4):0);
     top.classList.toggle('scrolled',y>40);
     if(reduce)return;
-    if(wide.matches){
+    if(heroWrap&&wide.matches){
       var hr=heroWrap.getBoundingClientRect(), span=hr.height-vh;
       heroWrap.style.setProperty('--hp',span>0?clamp(-hr.top/span).toFixed(4):0);
-    }else heroWrap.style.setProperty('--hp',0);
-    var rr=reveal.getBoundingClientRect();
-    reveal.style.setProperty('--rp',clamp((vh-rr.top)/(vh*0.95)).toFixed(4));
+    }else if(heroWrap)heroWrap.style.setProperty('--hp',0);
+    if(reveal){var rr=reveal.getBoundingClientRect();
+    reveal.style.setProperty('--rp',clamp((vh-rr.top)/(vh*0.95)).toFixed(4));}
     pxs.forEach(function(p,i){
       var r=p.getBoundingClientRect(); if(r.bottom<0||r.top>vh)return;
       var k=((r.top+r.height/2)-vh/2)/(vh/2+r.height/2), f=(i%2?0.6:1)*(wide.matches?1:.5);

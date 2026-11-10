@@ -17,3 +17,11 @@
 - 홈페이지: https://vivre-training.com/
 - 네이버 플레이스: https://map.naver.com/p/entry/place/1193233179
 - 구글 지도: https://maps.google.com/?cid=12792299189369787080
+
+## 안내 페이지
+- [가격](https://vivre-training.com/price/): 1:1·2:1 PT, 헬스 회원권, 30분 PT 가격표
+- [트레이너](https://vivre-training.com/trainers/): 선생님 6명과 자격
+- [처음 오시는 분](https://vivre-training.com/first/): 첫날 50분 무료 체험수업 흐름
+- [자주 묻는 질문](https://vivre-training.com/faq/): 질문 10가지와 답
+- [오시는 길](https://vivre-training.com/visit/): 주소·영업시간·주차·시설
+- [러닝 클래스](https://vivre-training.com/run/): RUN WITH VIVRE
